@@ -1,0 +1,16 @@
+[DEFAULT]
+filetypes = /home/pi/filetypes.json
+
+[sqlite3]
+db_file = /home/pi/confero.db
+
+[minio]
+access_key = my_shiny_s3_user
+secret_key = don't_tell!
+bucket = my-neat-bucket
+host = minio.example.com
+region = earth
+
+[tools]
+exiftool_exec=/usr/bin/exiftool
+

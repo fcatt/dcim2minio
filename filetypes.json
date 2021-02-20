@@ -1,0 +1,30 @@
+{
+  "ARW": {
+    "exif_datetime": "EXIF:DateTimeOriginal",
+    "mimetype": "image/x-sony-arw"
+  },
+  "CR2": {
+    "exif_datetime": "EXIF:DateTimeOriginal",
+    "mimetype": "image/x-canon-cr2"
+  },
+  "CR3": {
+    "exif_datetime": "EXIF:DateTimeOriginal",
+    "mimetype": "image/x-canon-cr3"
+  },
+  "RW2": {
+    "exif_datetime": "EXIF:DateTimeOriginal",
+    "mimetype": "image/x-panasonic-raw2"
+  },
+  "ORF": {
+    "exif_datetime": "EXIF:DateTimeOriginal",
+    "mimetype": "image/x-olympus-orf"
+  },
+  "MOV": {
+    "exif_datetime": "QuickTime:MediaCreateDate",
+    "mimetype": "video/quicktime"
+  },
+  "MP4": {
+    "exif_datetime": "QuickTime:MediaCreateDate",
+    "mimetype": "video/mp4"
+  }
+}
