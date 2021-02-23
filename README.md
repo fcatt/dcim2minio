@@ -28,7 +28,6 @@ This program is actually WRITING a small file at `/mountpoint/MISC/CONFERO/UUID.
 # Todo
 * Better code,
 * Better documentation,
-* Auto-backup of the SQLite database on the storage server,
 * More command line options,
 * Usage of object metadata and tags,
 * so many more…
