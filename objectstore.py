@@ -1,4 +1,5 @@
 from minio import Minio
+import io
 
 
 class ObjectStore:
@@ -15,6 +16,13 @@ class ObjectStore:
             return upload.etag
         except:
             return None
+
+    def upload_binary(self, data, object_name, mimetype):
+        try:
+            upload = self._conn.put_object(self._bucket, object_name, io.BytesIO(data), len(data), mimetype)
+            return upload.etag
+        except:
+            raise
 
     def get_object_size(self, object_name):
         try:

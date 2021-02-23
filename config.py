@@ -15,7 +15,7 @@ argparser.add_argument("--initdb", required=False, action="store_true",
 argparser.add_argument("--verbose", help="Write some informations about the process",
                        required=False, action="store_true")
 argparser.add_argument("--backupdb", required=False, action="store_true",
-                       help="NOT IMPLEMENTED! Backup the SQLite database in the object storage after operations")
+                       help="Backup the SQLite database in the object storage after operations")
 args = argparser.parse_args()
 
 

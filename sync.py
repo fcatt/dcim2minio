@@ -3,6 +3,8 @@ from exif import *
 from objectstore import ObjectStore
 from database import Database
 from picture import *
+import lzma
+import os
 
 
 def counter(current, total):
@@ -63,4 +65,14 @@ if __name__ == '__main__':
         else:
             vprint(count, file, '==', picture_info['object_name'])
     exif_server.terminate()
+
+    if args.backupdb:
+        db = open(config['sqlite3']['db_file'], 'rb')
+        remotename = os.path.basename(config['sqlite3']['db_file']) + '.xz'
+        etag = storage.upload_binary(lzma.compress(db.read()), remotename, 'application/x-xz')
+        if etag:
+            print("Database uploaded, etag:", etag)
+        else:
+            print("Database NOT uploaded!")
+
     print('End of processing')
