@@ -30,4 +30,5 @@ This program is actually WRITING a small file at `/mountpoint/MISC/CONFERO/UUID.
 * Better documentation,
 * More command line options,
 * Usage of object metadata and tags,
+* network throughput,
 * so many more…
