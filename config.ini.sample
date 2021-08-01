@@ -14,3 +14,6 @@ region = earth
 [tools]
 exiftool_exec=/usr/bin/exiftool
 
+[local]
+pictures_basedir = /home/pi/Pictures/Digital
+
