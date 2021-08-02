@@ -5,6 +5,7 @@ from database import Database
 from picture import *
 import lzma
 import os
+from shutil import copyfile
 
 
 def counter(current, total):
@@ -43,7 +44,6 @@ if __name__ == '__main__':
             vprint(count, "New file:", file)
             picture.set_exif_datetime(read_exif_datetime(file))
             picture.generate_object_name()
-#            object_size = storage.get_object_size(picture.get_object_name)
             db.write_picture_info(picture)
         picture_info = db.read_picture_info(picture)
         if picture_info and picture_info['object_etag'] is None:
@@ -56,6 +56,12 @@ if __name__ == '__main__':
                     picture.set_object_etag(etag)
                     db.write_object_etag(picture)
                     print("OK")
+                    if args.localcopy and config['local']['pictures_basedir']:
+                        print(count, " Copying", picture.get_object_name, "… ", end='', flush=True)
+                        local_path = os.path.join(config['local']['pictures_basedir'], picture.get_object_name)
+                        os.makedirs(os.path.dirname(local_path), exist_ok=True)
+                        copyfile(file, local_path)
+                        print("OK")
                 else:
                     print("ERROR")
             else:

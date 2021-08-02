@@ -16,6 +16,8 @@ argparser.add_argument("--verbose", help="Write some informations about the proc
                        required=False, action="store_true")
 argparser.add_argument("--backupdb", required=False, action="store_true",
                        help="Backup the SQLite database in the object storage after operations")
+argparser.add_argument("--localcopy", required=False, action="store_true",
+                       help="Make a local copy of each picture uploaded")
 args = argparser.parse_args()
 
 
