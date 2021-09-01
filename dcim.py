@@ -30,10 +30,10 @@ class DCIM:
         self._uuid_dir = os.path.join(self._media_source, self._uuid_subdir)
         self._uuid_path = os.path.join(self._uuid_dir, self._uuid_file)
         source_uuid = self.read_source_uuid()
-        if source_uuid:
+        if source_uuid is not None:
             self._source_uuid = source_uuid
         else:
-            self._source_uuid = self.write_source_uuid
+            self._source_uuid = self.write_source_uuid()
 
     def read_source_uuid(self):
         """Read the UUID value from the storage card"""
@@ -45,6 +45,7 @@ class DCIM:
             vprint("source UUID:", source_uuid)
             return source_uuid
         except:
+            vprint("UUID missing or empty")
             return None
 
     def write_source_uuid(self):
